@@ -10,8 +10,6 @@ format:
       data-background-image: warwick-logo-white.png
       data-background-size: 15%
       data-background-position: 100% 0%
-#format:
-#  warwickpres-revealjs: default
 ---
 
 ## What is Quarto?
@@ -64,7 +62,7 @@ Quarto comes **"batteries included"** straight out of the box
 
 -   HTML reports and websites
 -   PDF reports
--   MS Office (Word, Powerpoint)
+-   Word documents
 -   Presentations (Powerpoint, Beamer, `revealjs`)
 -   Books
 
@@ -92,7 +90,7 @@ See [FAQs](https://quarto.org/docs/faq/rmarkdown.html), including a conversion f
 
 > A Quarto document i.e. a `.qmd` is a plain text file, like a `.rmd`, that can be rendered to many different formats
 
-````         
+```         
 ---
 title: "Introduction to Quarto"
 format: html
@@ -101,15 +99,7 @@ format: html
 ## Quarto
 
 Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
 ```
-````
 
 ## Anatomy of a Quarto document
 
@@ -137,8 +127,7 @@ This is an [image](image.png).
 
 -   Code
 
-```{r}
-#| echo: fenced
+```{{r}}
 1 + 1
 ```
 
@@ -262,7 +251,7 @@ format:
 
 . . .
 
-> Quarto is based on Pandoc and uses its variation of markdown as its underlying document syntax. Pandoc markdown is an extended and slightly revised version of John Gruber's [Markdown](https://daringfireball.net/projects/markdown/) syntax.
+> Quarto is based on [Pandoc](https://pandoc.org/MANUAL#pandocs-markdown) and uses its variation of markdown as its underlying document syntax.
 
 ## Text Formatting
 
@@ -318,6 +307,22 @@ format:
 
 : {tbl-colwidths="\[50, 50\]"}
 
+## Lists
+
++---------------+------------------+
+| Markdown      | Output           |
++===============+==================+
+| ```           | -   item one     |
+| - item one    | -   item two     |
+| - item two    |                  |
+| ```           |                  |
++---------------+------------------+
+| ```           | 1.  item one     |
+| 1. item one   | 2.  item two     |
+| 1. item two   |                  |
+| ```           |                  |
++---------------+------------------+
+
 ## Links
 
 -   There are several types of "links" or hyperlinks.
@@ -330,25 +335,51 @@ You can embed [named hyperlinks](https://quarto.org/),
 direct urls like <https://quarto.org/>, and links to 
 [other places](#quarto-anatomy) in 
 the document. The syntax is similar for embedding an
-inline image: ![Penguins](images/lter_penguins.png).
+image: ![Ghana R logo](images/ghana-r.jpg).
 ```
 
 ## Output
 
 You can embed [named hyperlinks](https://quarto.org/), direct urls like <https://quarto.org/>, and links to [other places](#quarto-anatomy) in the document. The syntax is similar for embedding an inline image:\
-![Penguins](images/lter_penguins.png){style="width:250px;"}
+![Ghana R logo](images/ghana-r.jpg){style="width:250px;"}
 :::
+
+## Tables
+
+There are various ways to create tables, e.g. this *pipe table*
+
+```         
+| Default | Right | Left | Center |
+|---------|------:|:-----|:------:|
+| 12      | 12    | 12   | 12     |
+| 123     | 123   | 123  | 123    |
+| 1       | 1     | 1    | 1      |
+```
+
+produces
+
+| Default | Right | Left | Center |
+|---------|------:|:-----|:------:|
+| 12      |    12 | 12   |   12   |
+| 123     |   123 | 123  |  123   |
+| 1       |     1 | 1    |   1    |
+
+## Tables in RStudio Visual Editor
+
+![](images/clipboard-1735547696.png){fig-align="center"} ![](images/clipboard-502172151.png){fig-align="center"}
+
+## Table Editor
+
+![](images/clipboard-217779719.png)
 
 ## Code chunk
 
 ```{{r}}
-#| label: car-stuff
+#| label: distinct-cyl
 #| echo: false
 mtcars %>% 
   distinct(cyl)
 ```
-
-. . .
 
 -   Has 3x backticks on each end ```` ``` ````\
 -   Indicate engine (`r`) between curly braces `{r}`\
@@ -359,13 +390,14 @@ mtcars %>%
 show how to navigate through code chunks in RStudio (click arrows in footer of code window) demo with and without echo
 :::
 
-## Code
+## Figure with code
 
 ::: panel-tabset
 ## Code
 
 ```{{r}}
 #| label: fig-airquality
+#| echo: false
 #| out-width: "80%"
 #| fig-cap: Temperature and ozone level.
 #| fig-alt: A scatterplot of ozone level against temparature, with a local regression fit that has a confidence band. The ozone level is fairly constant at around 15ppb from a temperature of 55°F to 75°F, then increases linearly to around 80ppb at a temperature of 90°F, where the ozone level starts to asymptote. The points are generally close to this curve apart from 7 outliers with higher than expected ozone between 75°F and 95°F.
@@ -395,13 +427,62 @@ ggplot(airquality, aes(Temp, Ozone)) +
 ```
 :::
 
+## Table with code
+
+Simple tables can be created with `knitr::kable()`
+
+::: panel-tabset
+## Code
+
+```{{r}}
+#| label: tbl-airquality
+#| tbl-cap: "Biochemical oxygen demand over time."
+#| tbl-colwidths: [40,60]
+library(knitr)
+BOD |>
+  kable(align = "cr")
+```
+
+## Output
+
+```{r}
+#| label: tbl-airquality
+#| tbl-cap: "Biochemical oxygen demand over time."
+#| tbl-colwidths: [40,60]
+library(knitr)
+BOD |>
+  kable(align = "cr")
+```
+:::
+
 ## Quarto presentations
 
-``` yaml
+Selecting "Quarto Presentation" from the new file menu in RStudio gives the following starter code
+
+```         
 ---
+title: "Untitled"
 format: revealjs
+editor: visual
 ---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
 ```
+
+## Revealjs
+
+The default format is reavel.js which creates HTML slides.
+
+Options can be added to the default revealjs format, e.g.
 
 ``` yaml
 ---
@@ -411,9 +492,37 @@ format:
 ---
 ```
 
+Each level 2 header starts a new slide
+
+```         
+## Slide 1
+
+Content of slide 1
+```
+
+## This presentation
+
+[.qmd on GitHub](https://github.com/hturner/GhanaRConference2024/blob/main/index.qmd)
+
+```         
+---
+title: Write ups with Quarto
+subtitle: Ghana R Conference 2024
+author: Heather Turner
+date: 2024-06-06
+date-format: long
+format: 
+  warwickpres-revealjs: 
+    title-slide-attributes: 
+      data-background-image: warwick-logo-white.png
+      data-background-size: 15%
+      data-background-position: 100% 0%
+---
+```
+
 ## More on Quarto presentations
 
--   [Official guide](https://quarto.org/docs/presentations/)
+-   [Presentation section of Quarto docs](https://quarto.org/docs/presentations/)
 
 -   [Slidecraft 101](https://emilhvitfeldt.com/blog#category=slidecraft%20101) by Emil Hvitfeldt
 
@@ -423,56 +532,29 @@ format:
     -   Advanced slide themes
     -   7 tips and tricks
 
-# Publishing {.inverse}
+## Sharing HTML Outputs
 
-## Web publishing venues
+Use the `embed-resources` option to create a stand-alone HTML file that you can share:
 
-| Destination                          | Description                                                                     |
-|--------------------------------------|---------------------------------------------------------------------------------|
-| [Quarto Pub](quarto-pub.qmd)         | Publishing service for Quarto documents, websites, and books.                   |
-| [GitHub Pages](github-pages.qmd)     | Publish content based on source code managed within a GitHub repository.        |
-| [Posit Connect](rstudio-connect.qmd) | Publishing platform for secure sharing of data products within an organization. |
-| [Netlify](netlify.qmd)               | Professional web publishing platform.                                           |
-| [Confluence](confluence.qmd)         | Publishing platform for supporting team collaboration.                          |
+``` yaml
+format:
+  html:
+    embed-resources: true
+```
 
-... and more.
+Alternatively, HTML output can be published using [Quarto Pub](https://quartopub.com/), [GitHub Pages](https://quarto.org/docs/publishing/github-pages.html), [Netlify](https://www.netlify.com) and more.
 
 ## Quarto Pub
 
-Visit <https://quartopub.com/> and set up a free account.
+At the Terminal, run `quarto publish quarto-pub <document>`
 
-::: {style="text-align: center"}
-![](images/quartopub.png)
-:::
+![](images/clipboard-1911136158.png)
 
-## `quarto publish`
+You will be prompted to create a free account or sign in to [Quarto Pub](https://quartopub.com) before the document is published.
 
-\
-\
+##  {#example-quarto-site .center-h data-menu-title="Quarto document dialog"}
 
-At the Terminal, run:
-
-\
-
-::: {style="font-size: 2em"}
-``` bash
-quarto publish <document>
-```
-:::
-
-See e.g. <https://jjallaire.quarto.pub/>
-
-## Netlify
-
-Visit <https://app.netlify.com/> and set up a free account.
-
-At the Terminal, run:
-
-::: {style="font-size: 2em"}
-``` bash
-quarto publish netlify <document>
-```
-:::
+![](images/clipboard-2551730062.png)
 
 ## Resources
 

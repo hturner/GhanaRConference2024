@@ -459,7 +459,7 @@ Heather Turner
 <ul>
 <li>HTML reports and websites</li>
 <li>PDF reports</li>
-<li>MS Office (Word, Powerpoint)</li>
+<li>Word documents</li>
 <li>Presentations (Powerpoint, Beamer, <code>revealjs</code>)</li>
 <li>Books</li>
 </ul>
@@ -506,22 +506,7 @@ format: html
 
 ## Quarto
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-::: {.cell layout-align="center"}
-::: {.cell-output .cell-output-stdout}
-
-```
-[1] 2
-```
-
-
-:::
-:::</code></pre>
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see &lt;https://quarto.org&gt;.</code></pre>
 </section>
 <section id="anatomy-of-a-quarto-document" class="slide level2">
 <h2>Anatomy of a Quarto document</h2>
@@ -548,14 +533,9 @@ When you click the **Render** button a document will be generated that includes 
 <ul>
 <li>Code</li>
 </ul>
-<div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href=""></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href=""></a><span class="in">```{r}</span></span>
 <span id="cb4-2"><a href=""></a><span class="in">1 + 1</span></span>
 <span id="cb4-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
 <aside class="notes">
 <p>yaml within a code block</p>
 <style type="text/css">
@@ -597,9 +577,9 @@ When you click the **Render** button a document will be generated that includes 
 <section id="metadata-yaml" class="slide level2">
 <h2>Metadata: YAML</h2>
 <p>“Yet Another Markup Language” or “YAML Ain’t Markup Language”</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb6-2"><a href=""></a><span class="fu">key</span><span class="kw">:</span><span class="at"> value</span></span>
-<span id="cb6-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb5-2"><a href=""></a><span class="fu">key</span><span class="kw">:</span><span class="at"> value</span></span>
+<span id="cb5-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The <a href="https://yaml.org/">YAML</a> metadata or header is:</p>
 <blockquote>
 <p>processed in many stages of the rendering process and can influence the final document in many different ways. It is placed at the very beginning of the document and is read by each of Pandoc, Quarto and <code>knitr</code>. Along the way, the information that it contains can affect the code, content, and the rendering process.</p>
@@ -607,55 +587,55 @@ When you click the **Render** button a document will be generated that includes 
 </section>
 <section id="output-options" class="slide level2">
 <h2>Output Options</h2>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb7-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> something</span></span>
-<span id="cb7-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb6-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> something</span></span>
+<span id="cb6-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb7-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb7-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb8-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> html</span></span>
+<span id="cb8-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> docx</span></span>
 <span id="cb8-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb9-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> docx</span></span>
+<span id="cb9-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span>
 <span id="cb9-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb10-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span>
-<span id="cb10-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="options-on-options" class="slide level2">
 <h2>Options on options</h2>
 <p>Then add option arguments!</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb10-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb10-3"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb10-4"><a href=""></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-5"><a href=""></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb10-6"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Sub-options should be below the main format output and spacing matters!</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href=""></a><span class="pp">---</span></span>
 <span id="cb11-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
 <span id="cb11-3"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb11-4"><a href=""></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb11-5"><a href=""></a><span class="at">    </span><span class="fu">code-fold</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb11-4"><a href=""></a><span class="at">    </span><span class="fu">option1</span><span class="kw">:</span><span class="at"> text</span></span>
+<span id="cb11-5"><a href=""></a><span class="at">    </span><span class="fu">option2</span><span class="kw">:</span><span class="at"> logical</span></span>
 <span id="cb11-6"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment">
-<p>Sub-options should be below the main format output and spacing matters!</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb12-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb12-3"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb12-4"><a href=""></a><span class="at">    </span><span class="fu">option1</span><span class="kw">:</span><span class="at"> text</span></span>
-<span id="cb12-5"><a href=""></a><span class="at">    </span><span class="fu">option2</span><span class="kw">:</span><span class="at"> logical</span></span>
-<span id="cb12-6"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="yaml-is-sensitive" class="slide level2">
 <h2>YAML is sensitive</h2>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb13-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb13-2"><a href=""></a><span class="at">format:html</span><span class="co"> # invalid, no space between</span></span>
-<span id="cb13-3"><a href=""></a><span class="pp">---</span></span>
-<span id="cb13-4"><a href=""></a></span>
-<span id="cb13-5"><a href=""></a><span class="pp">---</span></span>
-<span id="cb13-6"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="co"> # invalid, read as missing</span></span>
-<span id="cb13-7"><a href=""></a><span class="at">html</span></span>
-<span id="cb13-8"><a href=""></a><span class="pp">---</span></span>
-<span id="cb13-9"><a href=""></a></span>
-<span id="cb13-10"><a href=""></a><span class="pp">---</span></span>
-<span id="cb13-11"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb13-12"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="co"> # valid but needs next object</span></span>
-<span id="cb13-13"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb12-2"><a href=""></a><span class="at">format:html</span><span class="co"> # invalid, no space between</span></span>
+<span id="cb12-3"><a href=""></a><span class="pp">---</span></span>
+<span id="cb12-4"><a href=""></a></span>
+<span id="cb12-5"><a href=""></a><span class="pp">---</span></span>
+<span id="cb12-6"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="co"> # invalid, read as missing</span></span>
+<span id="cb12-7"><a href=""></a><span class="at">html</span></span>
+<span id="cb12-8"><a href=""></a><span class="pp">---</span></span>
+<span id="cb12-9"><a href=""></a></span>
+<span id="cb12-10"><a href=""></a><span class="pp">---</span></span>
+<span id="cb12-11"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb12-12"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="co"> # valid but needs next object</span></span>
+<span id="cb12-13"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="text-markdown" class="slide level2">
 <h2>Text: Markdown</h2>
@@ -664,7 +644,7 @@ When you click the **Render** button a document will be generated that includes 
 </blockquote>
 <div class="fragment">
 <blockquote>
-<p>Quarto is based on Pandoc and uses its variation of markdown as its underlying document syntax. Pandoc markdown is an extended and slightly revised version of John Gruber’s <a href="https://daringfireball.net/projects/markdown/">Markdown</a> syntax.</p>
+<p>Quarto is based on <a href="https://pandoc.org/MANUAL#pandocs-markdown">Pandoc</a> and uses its variation of markdown as its underlying document syntax.</p>
 </blockquote>
 </div>
 </section>
@@ -742,6 +722,39 @@ When you click the **Render** button a document will be generated that includes 
 </tbody>
 </table>
 </section>
+<section id="lists" class="slide level2">
+<h2>Lists</h2>
+<table style="width:49%;">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code>- item one
+- item two</code></pre></td>
+<td><ul>
+<li>item one</li>
+<li>item two</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td><pre><code>1. item one
+1. item two</code></pre></td>
+<td><ol type="1">
+<li>item one</li>
+<li>item two</li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="links" class="slide level2">
 <h2>Links</h2>
 <ul>
@@ -751,28 +764,75 @@ When you click the **Render** button a document will be generated that includes 
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Markdown</a></li><li><a href="#tabset-1-2">Output</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href=""></a>You can embed <span class="co">[</span><span class="ot">named hyperlinks</span><span class="co">](https://quarto.org/)</span>,</span>
-<span id="cb24-2"><a href=""></a>direct urls like <span class="ot">&lt;https://quarto.org/&gt;</span>, and links to </span>
-<span id="cb24-3"><a href=""></a><span class="co">[</span><span class="ot">other places</span><span class="co">](#quarto-anatomy)</span> in </span>
-<span id="cb24-4"><a href=""></a>the document. The syntax is similar for embedding an</span>
-<span id="cb24-5"><a href=""></a>inline image: <span class="al">![Penguins](images/lter_penguins.png)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href=""></a>You can embed <span class="co">[</span><span class="ot">named hyperlinks</span><span class="co">](https://quarto.org/)</span>,</span>
+<span id="cb25-2"><a href=""></a>direct urls like <span class="ot">&lt;https://quarto.org/&gt;</span>, and links to </span>
+<span id="cb25-3"><a href=""></a><span class="co">[</span><span class="ot">other places</span><span class="co">](#quarto-anatomy)</span> in </span>
+<span id="cb25-4"><a href=""></a>the document. The syntax is similar for embedding an</span>
+<span id="cb25-5"><a href=""></a>image: <span class="al">![Ghana R logo](images/ghana-r.jpg)</span>.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-1-2">
 <p>You can embed <a href="https://quarto.org/">named hyperlinks</a>, direct urls like <a href="https://quarto.org/" class="uri">https://quarto.org/</a>, and links to <a href="#/quarto-anatomy">other places</a> in the document. The syntax is similar for embedding an inline image:<br>
-<img data-src="images/lter_penguins.png" style="width:250px;" alt="Penguins"></p>
+<img data-src="images/ghana-r.jpg" style="width:250px;" alt="Ghana R logo"></p>
 </div>
 </div>
 </div>
 </section>
+<section id="tables" class="slide level2">
+<h2>Tables</h2>
+<p>There are various ways to create tables, e.g.&nbsp;this <em>pipe table</em></p>
+<pre><code>| Default | Right | Left | Center |
+|---------|------:|:-----|:------:|
+| 12      | 12    | 12   | 12     |
+| 123     | 123   | 123  | 123    |
+| 1       | 1     | 1    | 1      |</code></pre>
+<p>produces</p>
+<table>
+<thead>
+<tr class="header">
+<th>Default</th>
+<th style="text-align: right;">Right</th>
+<th style="text-align: left;">Left</th>
+<th style="text-align: center;">Center</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>12</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr class="even">
+<td>123</td>
+<td style="text-align: right;">123</td>
+<td style="text-align: left;">123</td>
+<td style="text-align: center;">123</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tables-in-rstudio-visual-editor" class="slide level2">
+<h2>Tables in RStudio Visual Editor</h2>
+<p><img data-src="images/clipboard-1735547696.png" class="quarto-figure quarto-figure-center"> <img data-src="images/clipboard-502172151.png" class="quarto-figure quarto-figure-center"></p>
+</section>
+<section id="table-editor" class="slide level2">
+<h2>Table Editor</h2>
+
+<img data-src="images/clipboard-217779719.png" class="r-stretch"></section>
 <section id="code-chunk" class="slide level2">
 <h2>Code chunk</h2>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb25-2"><a href=""></a><span class="in">#| label: car-stuff</span></span>
-<span id="cb25-3"><a href=""></a><span class="in">#| echo: false</span></span>
-<span id="cb25-4"><a href=""></a><span class="in">mtcars %&gt;% </span></span>
-<span id="cb25-5"><a href=""></a><span class="in">  distinct(cyl)</span></span>
-<span id="cb25-6"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="fragment">
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb27-2"><a href=""></a><span class="in">#| label: distinct-cyl</span></span>
+<span id="cb27-3"><a href=""></a><span class="in">#| echo: false</span></span>
+<span id="cb27-4"><a href=""></a><span class="in">mtcars %&gt;% </span></span>
+<span id="cb27-5"><a href=""></a><span class="in">  distinct(cyl)</span></span>
+<span id="cb27-6"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Has 3x backticks on each end <code>```</code><br>
 </li>
@@ -796,27 +856,27 @@ When you click the **Render** button a document will be generated that includes 
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section>
-<section id="code" class="slide level2">
-<h2>Code</h2>
+<section id="figure-with-code" class="slide level2">
+<h2>Figure with code</h2>
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Code</a></li><li><a href="#tabset-2-2">Output</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href=""></a><span class="in">```{r}</span></span>
-<span id="cb26-2"><a href=""></a><span class="in">#| label: fig-airquality</span></span>
-<span id="cb26-3"><a href=""></a><span class="in">#| out-width: "80%"</span></span>
-<span id="cb26-4"><a href=""></a><span class="in">#| fig-cap: Temperature and ozone level.</span></span>
-<span id="cb26-5"><a href=""></a><span class="in">#| fig-alt: A scatterplot of ozone level against temparature, with a local regression fit that has a confidence band. The ozone level is fairly constant at around 15ppb from a temperature of 55°F to 75°F, then increases linearly to around 80ppb at a temperature of 90°F, where the ozone level starts to asymptote. The points are generally close to this curve apart from 7 outliers with higher than expected ozone between 75°F and 95°F.</span></span>
-<span id="cb26-6"><a href=""></a><span class="in">#| warning: false</span></span>
-<span id="cb26-7"><a href=""></a></span>
-<span id="cb26-8"><a href=""></a><span class="in">library(ggplot2)</span></span>
-<span id="cb26-9"><a href=""></a></span>
-<span id="cb26-10"><a href=""></a><span class="in">ggplot(airquality, aes(Temp, Ozone)) + </span></span>
-<span id="cb26-11"><a href=""></a><span class="in">  geom_point() + </span></span>
-<span id="cb26-12"><a href=""></a><span class="in">  geom_smooth(method = "loess")</span></span>
-<span id="cb26-13"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb28-2"><a href=""></a><span class="in">#| label: fig-airquality</span></span>
+<span id="cb28-3"><a href=""></a><span class="in">#| echo: false</span></span>
+<span id="cb28-4"><a href=""></a><span class="in">#| out-width: "80%"</span></span>
+<span id="cb28-5"><a href=""></a><span class="in">#| fig-cap: Temperature and ozone level.</span></span>
+<span id="cb28-6"><a href=""></a><span class="in">#| fig-alt: A scatterplot of ozone level against temparature, with a local regression fit that has a confidence band. The ozone level is fairly constant at around 15ppb from a temperature of 55°F to 75°F, then increases linearly to around 80ppb at a temperature of 90°F, where the ozone level starts to asymptote. The points are generally close to this curve apart from 7 outliers with higher than expected ozone between 75°F and 95°F.</span></span>
+<span id="cb28-7"><a href=""></a><span class="in">#| warning: false</span></span>
+<span id="cb28-8"><a href=""></a></span>
+<span id="cb28-9"><a href=""></a><span class="in">library(ggplot2)</span></span>
+<span id="cb28-10"><a href=""></a></span>
+<span id="cb28-11"><a href=""></a><span class="in">ggplot(airquality, aes(Temp, Ozone)) + </span></span>
+<span id="cb28-12"><a href=""></a><span class="in">  geom_point() + </span></span>
+<span id="cb28-13"><a href=""></a><span class="in">  geom_smooth(method = "loess")</span></span>
+<span id="cb28-14"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-2-2">
 <div class="cell" data-layout-align="center">
@@ -837,21 +897,133 @@ Figure&nbsp;1: Temperature and ozone level.
 </div>
 </div>
 </section>
+<section id="table-with-code" class="slide level2">
+<h2>Table with code</h2>
+<p>Simple tables can be created with <code>knitr::kable()</code></p>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Code</a></li><li><a href="#tabset-3-2">Output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb29-2"><a href=""></a><span class="in">#| label: tbl-airquality</span></span>
+<span id="cb29-3"><a href=""></a><span class="in">#| tbl-cap: "Biochemical oxygen demand over time."</span></span>
+<span id="cb29-4"><a href=""></a><span class="in">#| tbl-colwidths: [40,60]</span></span>
+<span id="cb29-5"><a href=""></a><span class="in">library(knitr)</span></span>
+<span id="cb29-6"><a href=""></a><span class="in">BOD |&gt;</span></span>
+<span id="cb29-7"><a href=""></a><span class="in">  kable(align = "cr")</span></span>
+<span id="cb29-8"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-3-2">
+<div class="cell" data-layout-align="center" data-tbl-colwidths="[40,60]">
+<div id="tbl-airquality" class="cell quarto-float" data-layout-align="center">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-airquality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Biochemical oxygen demand over time.
+</figcaption>
+<div aria-describedby="tbl-airquality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="cell">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 60%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Time</th>
+<th style="text-align: right;">demand</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">8.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">10.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">19.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">16.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">15.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: right;">19.8</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="quarto-presentations" class="slide level2">
 <h2>Quarto presentations</h2>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb27-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb27-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> revealjs</span></span>
-<span id="cb27-3"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb28-1"><a href=""></a><span class="pp">---</span></span>
-<span id="cb28-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb28-3"><a href=""></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
-<span id="cb28-4"><a href=""></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb28-5"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Selecting “Quarto Presentation” from the new file menu in RStudio gives the following starter code</p>
+<pre><code>---
+title: "Untitled"
+format: revealjs
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see &lt;https://quarto.org/docs/presentations/&gt;.
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code</code></pre>
+</section>
+<section id="revealjs" class="slide level2">
+<h2>Revealjs</h2>
+<p>The default format is reavel.js which creates HTML slides.</p>
+<p>Options can be added to the default revealjs format, e.g.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb31-1"><a href=""></a><span class="pp">---</span></span>
+<span id="cb31-2"><a href=""></a><span class="fu">format</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb31-3"><a href=""></a><span class="at">  </span><span class="fu">revealjs</span><span class="kw">:</span></span>
+<span id="cb31-4"><a href=""></a><span class="at">    </span><span class="fu">slide-number</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb31-5"><a href=""></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Each level 2 header starts a new slide</p>
+<pre><code>## Slide 1
+
+Content of slide 1</code></pre>
+</section>
+<section id="this-presentation" class="slide level2">
+<h2>This presentation</h2>
+<p><a href="https://github.com/hturner/GhanaRConference2024/blob/main/index.qmd">.qmd on GitHub</a></p>
+<pre><code>---
+title: Write ups with Quarto
+subtitle: Ghana R Conference 2024
+author: Heather Turner
+date: 2024-06-06
+date-format: long
+format: 
+  warwickpres-revealjs: 
+    title-slide-attributes: 
+      data-background-image: warwick-logo-white.png
+      data-background-size: 15%
+      data-background-position: 100% 0%
+---</code></pre>
 </section>
 <section id="more-on-quarto-presentations" class="slide level2">
 <h2>More on Quarto presentations</h2>
 <ul>
-<li><p><a href="https://quarto.org/docs/presentations/">Official guide</a></p></li>
+<li><p><a href="https://quarto.org/docs/presentations/">Presentation section of Quarto docs</a></p></li>
 <li><p><a href="https://emilhvitfeldt.com/blog#category=slidecraft%20101">Slidecraft 101</a> by Emil Hvitfeldt</p>
 <ul>
 <li>Colours and Fonts</li>
@@ -862,73 +1034,24 @@ Figure&nbsp;1: Temperature and ozone level.
 </ul></li>
 </ul>
 </section>
-<section>
-<section id="publishing" class="title-slide slide level1 inverse center">
-<h1>Publishing</h1>
-
-</section>
-<section id="web-publishing-venues" class="slide level2">
-<h2>Web publishing venues</h2>
-<table>
-<thead>
-<tr class="header">
-<th>Destination</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><a href="quarto-pub.qmd">Quarto Pub</a></td>
-<td>Publishing service for Quarto documents, websites, and books.</td>
-</tr>
-<tr class="even">
-<td><a href="github-pages.qmd">GitHub Pages</a></td>
-<td>Publish content based on source code managed within a GitHub repository.</td>
-</tr>
-<tr class="odd">
-<td><a href="rstudio-connect.qmd">Posit Connect</a></td>
-<td>Publishing platform for secure sharing of data products within an organization.</td>
-</tr>
-<tr class="even">
-<td><a href="netlify.qmd">Netlify</a></td>
-<td>Professional web publishing platform.</td>
-</tr>
-<tr class="odd">
-<td><a href="confluence.qmd">Confluence</a></td>
-<td>Publishing platform for supporting team collaboration.</td>
-</tr>
-</tbody>
-</table>
-<p>… and more.</p>
+<section id="sharing-html-outputs" class="slide level2">
+<h2>Sharing HTML Outputs</h2>
+<p>Use the <code>embed-resources</code> option to create a stand-alone HTML file that you can share:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb34-1"><a href=""></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb34-2"><a href=""></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb34-3"><a href=""></a><span class="at">    </span><span class="fu">embed-resources</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Alternatively, HTML output can be published using <a href="https://quartopub.com/">Quarto Pub</a>, <a href="https://quarto.org/docs/publishing/github-pages.html">GitHub Pages</a>, <a href="https://www.netlify.com">Netlify</a> and more.</p>
 </section>
 <section id="quarto-pub" class="slide level2">
 <h2>Quarto Pub</h2>
-<p>Visit <a href="https://quartopub.com/" class="uri">https://quartopub.com/</a> and set up a free account.</p>
-<div style="text-align: center">
-<p><img data-src="images/quartopub.png"></p>
-</div>
+<p>At the Terminal, run <code>quarto publish quarto-pub &lt;document&gt;</code></p>
+
+<img data-src="images/clipboard-1911136158.png" class="r-stretch"><p>You will be prompted to create a free account or sign in to <a href="https://quartopub.com">Quarto Pub</a> before the document is published.</p>
 </section>
-<section id="quarto-publish" class="slide level2">
-<h2><code>quarto publish</code></h2>
-<p><br>
-<br>
-</p>
-<p>At the Terminal, run:</p>
-<p><br>
-</p>
-<div style="font-size: 2em">
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href=""></a><span class="ex">quarto</span> publish <span class="op">&lt;</span>document<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>See e.g.&nbsp;<a href="https://jjallaire.quarto.pub/" class="uri">https://jjallaire.quarto.pub/</a></p>
-</section>
-<section id="netlify" class="slide level2">
-<h2>Netlify</h2>
-<p>Visit <a href="https://app.netlify.com/" class="uri">https://app.netlify.com/</a> and set up a free account.</p>
-<p>At the Terminal, run:</p>
-<div style="font-size: 2em">
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href=""></a><span class="ex">quarto</span> publish netlify <span class="op">&lt;</span>document<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
+<section id="example-quarto-site" class="slide level2 center-h" data-menu-title="Quarto document dialog">
+<h2></h2>
+
+<img data-src="images/clipboard-2551730062.png" class="r-stretch"></section>
 <section id="resources" class="slide level2">
 <h2>Resources</h2>
 <ul>
@@ -938,7 +1061,7 @@ Figure&nbsp;1: Temperature and ozone level.
 <li><p><a href="https://rstudio-conf-2022.github.io/get-started-quarto/">Getting Started with Quarto workshop website</a></p></li>
 <li><p><a href="https://posit-conf-2023.github.io/quarto-r/">Quarto for R and RStudio workshop</a></p></li>
 </ul>
-</section></section>
+</section>
 <section>
 <section id="end-matter" class="title-slide slide level1 inverse center">
 <h1>End matter</h1>
